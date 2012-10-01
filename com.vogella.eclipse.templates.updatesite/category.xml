@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.vogella.eclipse.templates.feature_1.0.0.qualifier.jar" id="com.vogella.eclipse.templates.feature" version="1.0.0.qualifier">
+      <category name="eclipsetemplates"/>
+   </feature>
+   <category-def name="eclipsetemplates" label="Eclipse Templates for SWT and JFace tools by vogella"/>
+</site>

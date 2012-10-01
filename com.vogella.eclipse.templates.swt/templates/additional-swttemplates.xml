@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*******************************************************************************
+ * Copyright (c) 2012 vogella GmbH and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lars Vogel <lars.vogel@gmail.com> - initial API and implementation
+ *******************************************************************************/
+-->
+
+<templates>
+
+<!-- ************************************************** Basic Widgets ************************************************** -->
+
+<template 
+	name="Button with SelectionAdapter" 
+	description="Button with SelectionAdapter" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.button2" 
+	context="swt-statements" enabled="true" autoinsert="false">
+	${buttonType:newType(org.eclipse.swt.widgets.Button)} ${button:newName(org.eclipse.swt.widgets.Button)}= new ${buttonType}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link(SWT.PUSH, SWT.CHECK, SWT.TOGGLE, SWT.RADIO,  SWT.FLAT)});
+	${button}.addSelectionListener(new ${selectionAdapterType:newType(org.eclipse.swt.events.SelectionAdapter)}(){
+		@Override
+		public void widgetSelected(${selectionEcnetType:newType(org.eclipse.swt.events.SelectionEvent)} e) {
+			${cursor}
+		}	
+	});
+	${button}.setText("Click me");
+	${imp:import(org.eclipse.swt.SWT)}
+
+
+</template>
+
+<template 
+	name="Text without Layout Info" 
+	description="Text" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.text2" 
+	context="swt-statements" enabled="true" autoinsert="false">
+	${TextType:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${TextType}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link(SWT.BORDER, SWT.NONE)});
+	${imp:import(org.eclipse.swt.SWT)}
+</template>
+
+
+<template 
+	name="Text Multiline" 
+	description="Text" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.text3" 
+	context="swt-statements" enabled="true" autoinsert="false">
+	${TextType:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${TextType}(${parent:var(org.eclipse.swt.widgets.Composite)}, SWT.BORDER | SWT.MULTI);
+	${imp:import(org.eclipse.swt.SWT)}
+</template>
+
+
+<template 
+	name="Text with Label" 
+	description="Text with Label" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.text" 
+	context="swt-statements" enabled="true" autoinsert="false">
+	${LabelType:newType(org.eclipse.swt.widgets.Label)} ${label:newName(org.eclipse.swt.widgets.Label)}= new ${LabelType}(${parent:var(org.eclipse.swt.widgets.Composite)}, SWT.NONE);
+	${label}.setText("${cursor}");
+	
+	
+	${TextType:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${TextType}(${parent:var(org.eclipse.swt.widgets.Composite)}, SWT.BORDER | SWT.MULTI);
+	${imp:import(org.eclipse.swt.SWT)}
+</template>
+
+</templates>
