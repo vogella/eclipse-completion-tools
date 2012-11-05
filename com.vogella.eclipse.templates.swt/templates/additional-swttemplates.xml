@@ -36,7 +36,7 @@
 </template>
 
 <template 
-	name="Text without Layout Info" 
+	name="Text - Simple" 
 	description="Text" 
 	id="org.eclipse.jdt.ui.text.codetemplates.swt.text2" 
 	context="swt-statements" enabled="true" autoinsert="false">
@@ -46,13 +46,23 @@
 
 
 <template 
-	name="Text Multiline" 
+	name="Text - Multiline" 
 	description="Text" 
 	id="org.eclipse.jdt.ui.text.codetemplates.swt.text3" 
 	context="swt-statements" enabled="true" autoinsert="false">
 	${TextType:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${TextType}(${parent:var(org.eclipse.swt.widgets.Composite)}, SWT.BORDER | SWT.MULTI);
 	${imp:import(org.eclipse.swt.SWT)}
 </template>
+
+<template 
+	name="Text - Search" 
+	description="Text" 
+	id="org.eclipse.jdt.ui.text.codetemplates.swt.text4" 
+	context="swt-statements" enabled="true" autoinsert="false">
+	${TextType:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${TextType}(${parent:var(org.eclipse.swt.widgets.Composite)}, SWT.BORDER | SWT.SEARCH | SWT.CANCEL | SWT.ICON_SEARCH);
+	${imp:import(org.eclipse.swt.SWT)}
+</template>
+
 
 
 <template 
